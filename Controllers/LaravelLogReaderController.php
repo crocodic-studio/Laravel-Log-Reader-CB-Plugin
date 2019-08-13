@@ -23,6 +23,8 @@ class LaravelLogReaderController extends Controller
             @unlink($log);
         }
 
+        Cache::forget("LaravelLogReader");
+
         return cb()->redirectBack("Log files has been cleared!","success");
     }
 
