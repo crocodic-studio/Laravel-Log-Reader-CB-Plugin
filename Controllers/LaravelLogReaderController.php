@@ -16,6 +16,16 @@ class LaravelLogReaderController extends Controller
         return view('LaravelLogReader::index',$data);
     }
 
+    public function getClearLog()
+    {
+        $data = glob(storage_path("logs/*.log"));
+        foreach($data as $log) {
+            @unlink($log);
+        }
+
+        return cb()->redirectBack("Log files has been cleared!","success");
+    }
+
     private function logData()
     {
 

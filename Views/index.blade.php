@@ -1,6 +1,10 @@
 @extends("crudbooster::dev_layouts.layout")
 @section("content")
 
+    <div align="right">
+        <a href="javascript:;" onclick="goToUrlWithConfirmation('','Do you want to clear log files?')" class="btn btn-danger"><i class="fa fa-trash"></i> Clear Log</a>
+    </div>
+
     <div class="box box-primary">
         <div class="box-header">
             <h1 class="box-title with-border">Show Latest Log Data ({{ count($result) }})</h1>
