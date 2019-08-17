@@ -5,5 +5,7 @@
   "icon":"fa fa-eye",
   "changelog": "update",
   "author":"CRUDBooster",
-  "author_homepage":"http://crudbooster.com"
+  "author_homepage":"http://crudbooster.com",
+  "asset":"Asset",
+  "type":"plugin"
 }
