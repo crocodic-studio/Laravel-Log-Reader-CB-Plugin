@@ -1,4 +1,4 @@
-<?php namespace crocodicstudio\crudbooster;
+<?php namespace crocodicstudio\LaravelLogReader;
 
 use Illuminate\Support\ServiceProvider;
 use App;
@@ -13,7 +13,7 @@ class LaravelLogReaderServiceProvider extends ServiceProvider
 
     public function boot()
     {
-
+        $this->publishes([__DIR__."/Publish"=>app_path("CBPlugins/LaravelLogReader")]);
     }
 
     /**

@@ -22,7 +22,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "crocodicstudio\\laravel-log-reader\\LaravelLogReaderServiceProvider"
+                "crocodicstudio\\LaravelLogReader\\LaravelLogReaderServiceProvider"
             ]
         }
     }
