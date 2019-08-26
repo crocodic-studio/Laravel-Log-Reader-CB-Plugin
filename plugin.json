@@ -9,6 +9,6 @@
   "asset":"Asset",
   "type":"plugin",
   "source":"composer",
-  "package":"laravel-log-reader",
+  "package":"crocodicstudio/laravel-log-reader",
   "service_provider":"crocodicstudio\\LaravelLogReader\\LaravelLogReaderServiceProvider"
 }
