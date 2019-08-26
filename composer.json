@@ -9,14 +9,14 @@
             "email": "ferry@crocodic.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "illuminate/routing" : "5.*",
         "jackiedo/log-reader": "2.*"
     },
     "autoload": {
         "psr-4": {
-            "crocodicstudio\\laravel-log-reader\\": "src/"
+            "crocodicstudio\\LaravelLogReader\\": "src/"
         }
     },
     "extra": {
