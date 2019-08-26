@@ -1,5 +1,5 @@
 {
-    "name": "crocodicstudio/laravel-log-reader-for-cb",
+    "name": "crocodicstudio/laravel-log-reader",
     "description": "Laravel Log Reader For CB",
     "type": "library",
     "license": "MIT",
@@ -16,13 +16,13 @@
     },
     "autoload": {
         "psr-4": {
-            "crocodicstudio\\laravel-log-reader-for-cb\\": "src/"
+            "crocodicstudio\\laravel-log-reader\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "crocodicstudio\\laravel-log-reader-for-cb\\LaravelLogReaderServiceProvider"
+                "crocodicstudio\\laravel-log-reader\\LaravelLogReaderServiceProvider"
             ]
         }
     }
