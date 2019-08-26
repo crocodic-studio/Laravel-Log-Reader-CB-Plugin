@@ -13,7 +13,11 @@ class LaravelLogReaderServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        $this->publishes([__DIR__."/Publish"=>app_path("CBPlugins/LaravelLogReader")]);
+        $this->publishes([__DIR__."/Controllers"=>app_path("CBPlugins/LaravelLogReader/Controllers")]);
+        $this->publishes([__DIR__."/Routes"=>app_path("CBPlugins/LaravelLogReader/Routes")]);
+        $this->publishes([__DIR__."/Views"=>app_path("CBPlugins/LaravelLogReader/Views")]);
+        $this->publishes([__DIR__."/plugin.json"=>app_path("CBPlugins/LaravelLogReader/plugin.json")]);
+        $this->publishes([__DIR__."/Asset"=>public_path("cb_asset/LaravelLogReader")]);
     }
 
     /**
