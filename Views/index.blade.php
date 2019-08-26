@@ -7,44 +7,52 @@
 
     <div class="box box-primary mt-10">
         <div class="box-header">
-            <h1 class="box-title with-border">Show Latest Log Data ({{ count($result) }})</h1>
+            <h1 class="box-title with-border">Browse Log</h1>
         </div>
         <div class="box-body">
-            <table id="table-log" class="table datatable">
+            <table id="table-log" class="table table-striped table-bordered">
                 <thead>
                     <tr>
-                        <th width="10%">No</th>
-                        <th width="30%">Log Time</th>
-                        <th>Description</th>
+                        <th>Time</th>
+                        <th>Level</th>
+                        <th>Message</th>
                     </tr>
                 </thead>
                 <tbody>
                     @php $no=0; @endphp
-                    @foreach($result as $i=>$log)
+                    @foreach($result as $log)
                     <tr>
-                        <td>{{ ++$no }}</td>
-                        <td>{{ $log['time'] }}</td>
-                        <td><a title="Click to see detail" href="javascript:;" onclick="showDetailLog(this)">
-                            <code>{{ $log['description'] }}</code></a>
-                            <div style="display: none" class="detail">
-                                Stack Trace: <br>
-                                <code style="font-size: 11px">{!!  implode("<br/>", $log['detail']) !!}</code>
-                            </div>
-                        </td>
+                        <td style="white-space: nowrap">{{ $log->date->format("Y-m-d H:i:s") }}</td>
+                        <td>{{ $log->level }}</td>
+                        <td>{{ $log->context->message }}</td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    {!! $result->links() !!}
+                </div>
+                <div class="col-sm-6">
+                    <?php
+                    $from = $result->count() ? ($result->perPage() * $result->currentPage() - $result->perPage() + 1) : 0;
+                    $to = $result->perPage() * $result->currentPage() - $result->perPage() + $result->count();
+                    $total = $result->total();
+                    ?>
+                    <div align="right">
+                        <button style="margin-top: 20px" class="btn btn-default disabled" type="button">
+                            {{ cbLang("pagination_footer_total_data",[
+                                "from"=>$from,
+                                "to"=>$to,
+                                "total"=>$total
+                                ]) }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-
-    @push("bottom")
-        <script>
-            function showDetailLog(t) {
-                $("#table-log .detail").hide()
-                $(t).next(".detail").fadeIn()
-            }
-        </script>
-    @endpush
 
 @endsection

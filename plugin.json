@@ -1,11 +1,12 @@
 {
   "name":"Laravel Log Reader",
   "description":"Parsing the laravel log to human readable log",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "icon":"fa fa-eye",
   "changelog": "update",
   "author":"CRUDBooster",
   "author_homepage":"http://crudbooster.com",
   "asset":"Asset",
-  "type":"plugin"
+  "type":"plugin",
+  "source":"composer"
 }
