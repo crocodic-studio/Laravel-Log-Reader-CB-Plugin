@@ -1,5 +1,5 @@
 {
-    "name": "crudbooster/laravel-log-reader",
+    "name": "crudbooster/laravel-log-reader-for-cb",
     "description": "Laravel Log Reader For CB",
     "type": "library",
     "license": "MIT",
@@ -13,5 +13,17 @@
     "require": {
         "illuminate/routing" : "5.*",
         "jackiedo/log-reader": "2.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "crocodicstudio\\laravel-log-reader-for-cb\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "crocodicstudio\\laravel-log-reader-for-cb\\LaravelLogReaderServiceProvider"
+            ]
+        }
     }
 }
