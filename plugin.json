@@ -8,5 +8,7 @@
   "author_homepage":"http://crudbooster.com",
   "asset":"Asset",
   "type":"plugin",
-  "source":"composer"
+  "source":"composer",
+  "package":"laravel-log-reader",
+  "service_provider":"crocodicstudio\\LaravelLogReader\\LaravelLogReaderServiceProvider"
 }
