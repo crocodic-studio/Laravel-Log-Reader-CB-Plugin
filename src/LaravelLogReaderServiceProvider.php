@@ -5,6 +5,9 @@ use App;
 
 class LaravelLogReaderServiceProvider extends ServiceProvider
 {
+
+    protected $plugin_name = "LaravelLogReader";
+
     /**
      * Bootstrap the application services.
      *
@@ -13,11 +16,11 @@ class LaravelLogReaderServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        $this->publishes([__DIR__."/Controllers"=>app_path("CBPlugins/LaravelLogReader/Controllers")]);
-        $this->publishes([__DIR__."/Routes"=>app_path("CBPlugins/LaravelLogReader/Routes")]);
-        $this->publishes([__DIR__."/Views"=>app_path("CBPlugins/LaravelLogReader/Views")]);
-        $this->publishes([__DIR__."/plugin.json"=>app_path("CBPlugins/LaravelLogReader/plugin.json")]);
-        $this->publishes([__DIR__."/Asset"=>public_path("cb_asset/LaravelLogReader")]);
+        $this->publishes([__DIR__."/Controllers"=>app_path("CBPlugins/".$this->plugin_name."/Controllers")]);
+        $this->publishes([__DIR__."/Routes"=>app_path("CBPlugins/".$this->plugin_name."/Routes")]);
+        $this->publishes([__DIR__."/Views"=>app_path("CBPlugins/".$this->plugin_name."/Views")]);
+        $this->publishes([__DIR__."/plugin.json"=>app_path("CBPlugins/".$this->plugin_name."/plugin.json")]);
+        $this->publishes([__DIR__."/Asset"=>public_path("cb_asset/".$this->plugin_name)]);
     }
 
     /**
