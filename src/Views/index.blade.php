@@ -9,7 +9,7 @@
         <div class="box-header">
             <h1 class="box-title with-border">Browse Log</h1>
         </div>
-        <div class="box-body">
+        <div class="box-body table-responsive">
             <table id="table-log" class="table table-striped table-bordered">
                 <thead>
                     <tr>
